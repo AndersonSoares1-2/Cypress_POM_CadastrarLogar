@@ -26,6 +26,7 @@ class Logica {
     cy.get(this.emailInput).eq(0).type(email, { force: true });
     cy.get(this.passwordInput).eq(0).type(senha, { force: true });
     cy.get(this.btnAcessar).click({ force: true });
+    cy.url().should('include', '/home');
     cy.get(this.homeImg).should('be.visible');
   }
 }
